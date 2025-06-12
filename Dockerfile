@@ -12,7 +12,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 # php
 RUN apt update && apt upgrade -y && apt install procps --no-install-recommends -y && \
-    install-php-extensions pdo_pgsql intl zip opcache pgsql redis bcmath sockets pcntl && \
+    install-php-extensions pdo_pgsql intl zip opcache pgsql redis bcmath sockets pcntl zstd && \
     cp /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime && \
     echo "Europe/Amsterdam" >  /etc/timezone
 
